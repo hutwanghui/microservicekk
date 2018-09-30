@@ -1,0 +1,21 @@
+spring:
+  data:
+    elasticsearch:
+      #      repositories:
+      #        enabled: true
+      cluster-nodes: localhost:9300
+      #      properties:
+      #        path:
+      #          logs: ./elasticsearch/log
+      #          data: ./elasticsearch/data
+      cluster-name: elasticsearch
+  application:
+    name: kk-elasticsearch
+
+server:
+  port: 9001
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/

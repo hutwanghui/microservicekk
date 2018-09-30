@@ -1,0 +1,103 @@
+#spring:
+#  redis:
+#    database: 2
+#    host: localhost
+#    port: 6379
+#    password: wh970121
+#    lettuce:
+#      pool:
+#        max-active: 8
+#        max-idle: 8
+#        min-idle: 0
+#        max-wait: -1ms
+#    timeout: 1000ms
+#
+#  application:
+#    name: kk-user
+#  datasource:
+#    druid:
+#      url: jdbc:mysql://localhost:3306/microservice?useUnicode=true&characterEncoding=utf-8
+#      username: microservice
+#      password: jh123456
+#      initial-size: 5
+#      max-active: 20
+#      min-idle: 5
+#      max-wait: 60000
+#      time-between-eviction-runs-millis: 60000
+#      min-evictable-idle-time-millis: 300000
+#      validation-query: select 'x'
+#      test-on-borrow: false
+#      test-on-return: false
+#      test-while-idle: true
+#      max-pool-prepared-statement-per-connection-size: 100
+#      filters: stat,wall
+#      web-stat-filter:
+#        enabled: true
+#        url-pattern: /*
+#        session-stat-enable: true
+#        session-stat-max-count: 1000
+#        profile-enable: true
+#      stat-view-servlet:
+#        enabled: true
+#        url-pattern: /druid/*
+#        reset-enable: true
+#        login-username: druid
+#        login-password: druid123
+#      filter:
+#        wall:
+#          config:
+#            multi-statement-allow: true
+#          enabled: true
+#          db-type: mysql
+#        stat:
+#          slow-sql-millis: 5000
+#          log-slow-sql: true
+#          db-type: mysql
+#      aop-patterns: org.hut.kkuser.service.*
+#      driver-class-name: com.mysql.jdbc.Driver
+#  boot:
+#    admin:
+#      client:
+#        url: http://localhost:9999/admin-server
+#        username: admin
+#        password: admin
+#
+#
+#server:
+#  port: 9003
+#
+#eureka:
+#  client:
+#    #    register-with-eureka: true
+#    fetch-registry: true
+#    serviceUrl:
+#      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+#
+#mybatis:
+#  type-aliases-package: org.hut.kkuser.entity
+#  mapper-locations: classpath:MysqlMapper/*.xml
+#
+#
+#logging:
+#  level:
+#    org:
+#      hut:
+#        kkuser:
+#          dao: debug
+#
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#  endpoint:
+#    health:
+#      show-details: always
+#    shutdown:
+#      enabled: true
+#info:
+#  app:
+#    name: "kk-user"
+#    description: "用户信息服务"
+#    version: "@project.version@"
+#    spring-boot-version: "@project.parent.version@"

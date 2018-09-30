@@ -1,0 +1,69 @@
+server:
+  port: 9999
+  servlet:
+    context-path: /admin-server
+  tomcat:
+    max-connections: 1000000
+#  context-path: /admin-server
+
+spring:
+  mail:
+    host: smtp.163.com
+    username: zjjhwanghui@163.com
+    password: gfpy476dyx
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+  application:
+    name: kk-dtcenter
+  security:
+    user:
+      name: admin
+      password: admin
+  profiles:
+    active: secure
+  boot:
+    admin:
+      notify:
+        mail:
+          from: zjjhwanghui@163.com
+          to: 472860892@qq.com
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/hutwanghui/microservicekkconfig
+#          username: hutwanghui
+#          passphrase: wh970121
+          search-paths: config-repo
+      label: master
+    stream:
+      kafka:
+        binder:
+          brokers: 192.168.99.100:9092
+          zk-nodes: 192.168.99.100:2181
+          configuration:
+            auto:
+              offset:
+                reset: latest
+      default-binder: kafka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+
+eureka:
+  client:
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/

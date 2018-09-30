@@ -1,0 +1,18 @@
+-- auto Generated on 2018-09-21 10:44:58 
+-- DROP TABLE IF EXISTS `sys_user`; 
+CREATE TABLE `sys_user`(
+	`id` INT (11) UNIQUE NOT NULL AUTO_INCREMENT COMMENT 'id',
+	`username` VARCHAR (50) NOT NULL COMMENT 'username',
+	`password` VARCHAR (50) NOT NULL COMMENT 'password',
+	`name` VARCHAR (10) NOT NULL COMMENT 'name',
+	`birthday` VARCHAR (50) COMMENT 'birthday',
+	`address` VARCHAR (150) COMMENT 'address',
+	`mobile` VARCHAR (50) NOT NULL COMMENT 'mobile',
+	`email` VARCHAR (50) NOT NULL COMMENT 'email',
+	`sex` VARCHAR (2) COMMENT 'sex',
+	`status` VARCHAR (2) NOT NULL COMMENT 'status',
+	`create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAM COMMENT 'createTime',
+	`update_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAM COMMENT 'updateTime',
+	INDEX(id),
+	PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '`sys_user`';
